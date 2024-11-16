@@ -11,6 +11,6 @@ package com.mycompany.telaprincipal;
 public class TelaPrincipal {
 
     public static void main(String[] args) {
-        new TelaLogin().setVisible(true);
+        new InterfaceTelaPrincipal().setVisible(true);
     }
 }
