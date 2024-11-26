@@ -4,8 +4,8 @@
  */
 package com.mycompany.telaprincipal;
 
-import com.mycompany.teladono.TelaDono;
-import com.mycompany.telausuario.TelaUsuario;
+import com.mycompany.teladono.CadastroRestaurante;
+import com.mycompany.telausuario.EscolhaRestaurante;
 import javax.swing.JOptionPane;
 
 /**
@@ -41,7 +41,7 @@ public class InterfaceTelaPrincipal extends javax.swing.JFrame {
         setBackground(new java.awt.Color(51, 0, 255));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(102, 0, 255));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
         jPanel1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
@@ -76,31 +76,31 @@ public class InterfaceTelaPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(121, 121, 121))
+                .addGap(122, 122, 122))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(140, 140, 140)
                         .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
+                        .addGap(85, 85, 85)
                         .addComponent(LoginUsuário, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
+                        .addGap(76, 76, 76)
                         .addComponent(LoginDono, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(44, 44, 44)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addGap(32, 32, 32)
+                .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LoginUsuário, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LoginDono, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -136,11 +136,11 @@ public class InterfaceTelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginDonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginDonoActionPerformed
-        new TelaDono().setVisible(true);
+        new CadastroRestaurante().setVisible(true);
     }//GEN-LAST:event_LoginDonoActionPerformed
 
     private void LoginUsuárioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginUsuárioActionPerformed
-        new TelaUsuario().setVisible(true);
+        new EscolhaRestaurante().setVisible(true);
     }//GEN-LAST:event_LoginUsuárioActionPerformed
 
     /**
