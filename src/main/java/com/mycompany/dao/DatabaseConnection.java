@@ -13,12 +13,15 @@ import java.sql.SQLException;
  * @author sergi
  */
 public class DatabaseConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/projeto_java";
-    private static final String USER = "root";
-    private static final String PASSWORD = "Paysandu_2077@";
+    private static final String URL = System.getenv("DB_URL");
+    private static final String USER = System.getenv("DB_USER");
+    private static final String PASSWORD = System.getenv("DB_PASSWORD");
 
     public static Connection getConnection() {
         try {
+            if (URL == null || USER == null || PASSWORD == null) {
+                throw new RuntimeException("Variáveis de ambiente para conexão com o banco não configuradas.");
+            }
             // Estabelecendo a conexão com o banco
             return DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (SQLException e) {
