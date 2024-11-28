@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.telaprincipal;
+package com.mycompany.telausuario;
 
 import com.mycompany.dao.UsuarioDAO;
 
@@ -10,10 +10,10 @@ import com.mycompany.dao.UsuarioDAO;
  *
  * @author sergi
  */
-public class TelaPrincipal {
+public class TelaPrincipalUsuario {
 
     public static void main(String[] args) {
-        new InterfaceTelaPrincipal().setVisible(true);
+        new InterfaceTelaUsuario().setVisible(true);
         
         UsuarioDAO usuarioDAO = new UsuarioDAO();
 

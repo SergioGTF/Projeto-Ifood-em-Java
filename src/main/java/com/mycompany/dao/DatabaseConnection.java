@@ -13,6 +13,7 @@ import java.sql.SQLException;
  * @author sergi
  */
 public class DatabaseConnection {
+
     private static final String URL = System.getenv("DB_URL");
     private static final String USER = System.getenv("DB_USER");
     private static final String PASSWORD = System.getenv("DB_PASSWORD");
@@ -22,10 +23,8 @@ public class DatabaseConnection {
             if (URL == null || USER == null || PASSWORD == null) {
                 throw new RuntimeException("Variáveis de ambiente para conexão com o banco não configuradas.");
             }
-            // Estabelecendo a conexão com o banco
             return DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (SQLException e) {
-            // Lança exceção em caso de erro
             throw new RuntimeException("Erro ao conectar ao banco de dados: " + e.getMessage(), e);
         }
     }
