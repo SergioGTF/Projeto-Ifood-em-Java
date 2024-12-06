@@ -1,6 +1,7 @@
-C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\dao\DatabaseConnection.java
-C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\dao\UsuarioDAO.java
 C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\telacliente\EscolhaRestaurante.java
+C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\telacliente\TelaCadastroCliente.java
+C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\telacliente\TelaLoginCliente.java
+C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\telacliente\UsuarioCliente.java
 C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\teladono\Bebida.java
 C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\teladono\CadastroBebidasRestaurante.java
 C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\teladono\CadastroComidaRestaurante.java
@@ -8,6 +9,8 @@ C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\my
 C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\teladono\Comida.java
 C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\teladono\ListaRestaurantes.java
 C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\teladono\Produto.java
+C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\teladono\TelaLoginDono.java
+C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\teladono\UsuarioDono.java
 C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\telausuario\InterfaceTelaUsuario.java
 C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\telausuario\TelaPrincipalUsuario.java
 C:\Users\sergi\OneDrive\Documentos\NetBeansProjects\Projeto\src\main\java\com\mycompany\telausuario\Usuario.java

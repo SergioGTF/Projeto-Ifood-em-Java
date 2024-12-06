@@ -7,7 +7,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
 public class CadastroComidaRestaurante extends javax.swing.JFrame {
-
+    
     private List<Comida> listaComidas = new ArrayList<>();
     private boolean comidacadastrada = false;
 
@@ -45,10 +45,9 @@ public class CadastroComidaRestaurante extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 0, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, " Cadastrar Comida", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 3, 18))); // NOI18N
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         txtnome.setText("Nome");
@@ -150,9 +149,10 @@ public class CadastroComidaRestaurante extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        painelescolhacomida.setBackground(new java.awt.Color(204, 204, 204));
+        painelescolhacomida.setBackground(new java.awt.Color(255, 255, 255));
         painelescolhacomida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        ComidasCadastradas.setBackground(new java.awt.Color(242, 242, 242));
         ComidasCadastradas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -285,7 +285,7 @@ public class CadastroComidaRestaurante extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Produto cadastrado com sucesso!");
 
         imprimirListaComidas();
-        
+
         comidacadastrada = true;
     }//GEN-LAST:event_BotaoCadastrarActionPerformed
 

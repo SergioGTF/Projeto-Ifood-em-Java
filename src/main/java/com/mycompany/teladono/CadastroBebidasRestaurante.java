@@ -38,15 +38,13 @@ public class CadastroBebidasRestaurante extends javax.swing.JFrame {
         painelescolhacomida = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         BebidasCadastradas = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 0, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, " Cadastrar Bebida", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 3, 18))); // NOI18N
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         txtnome.setText("Nome");
@@ -152,9 +150,10 @@ public class CadastroBebidasRestaurante extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        painelescolhacomida.setBackground(new java.awt.Color(204, 204, 204));
+        painelescolhacomida.setBackground(new java.awt.Color(255, 255, 255));
         painelescolhacomida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        BebidasCadastradas.setBackground(new java.awt.Color(242, 242, 242));
         BebidasCadastradas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -192,8 +191,6 @@ public class CadastroBebidasRestaurante extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton2.setText("Próximo");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -202,10 +199,7 @@ public class CadastroBebidasRestaurante extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(painelescolhacomida, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton2)))
+                    .addComponent(painelescolhacomida, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -214,9 +208,7 @@ public class CadastroBebidasRestaurante extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(painelescolhacomida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addContainerGap())
+                .addGap(35, 35, 35))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -279,6 +271,7 @@ public class CadastroBebidasRestaurante extends javax.swing.JFrame {
         RecipienteBebida.setText("");
 
         JOptionPane.showMessageDialog(this, "Bebida cadastrada com sucesso!");
+
         imprimirListaBebidas();
     }//GEN-LAST:event_BotaoCadastrarActionPerformed
 
@@ -331,8 +324,8 @@ public class CadastroBebidasRestaurante extends javax.swing.JFrame {
 
         DefaultTableModel dtmBebida = (DefaultTableModel) BebidasCadastradas.getModel();
         dtmBebida.setValueAt(nome, selectedRow, 0);
-        dtmBebida.setValueAt(String.format("%.2f", preco), selectedRow, 1);
-        dtmBebida.setValueAt(descricao, selectedRow, 2);
+        dtmBebida.setValueAt(descricao, selectedRow, 1);
+        dtmBebida.setValueAt(String.format("%.2f", preco), selectedRow, 2);
         dtmBebida.setValueAt(tamanhoMl + " ml", selectedRow, 3);
         dtmBebida.setValueAt(isAlcoolica ? "Sim" : "Não", selectedRow, 4);
         dtmBebida.setValueAt(recipiente, selectedRow, 5);
@@ -354,7 +347,6 @@ public class CadastroBebidasRestaurante extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField PrecoBebida;
     private javax.swing.JTextField RecipienteBebida;
     private javax.swing.JFormattedTextField TamanhoMlBebida;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
