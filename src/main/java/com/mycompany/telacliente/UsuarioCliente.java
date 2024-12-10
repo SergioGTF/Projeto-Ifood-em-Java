@@ -6,17 +6,15 @@ public class UsuarioCliente extends Usuario {
 
     private String nome;
     private String cpf;
-    private String telefone;
     private String celular;
     private String dataNascimento;
     private String sexo;
 
     public UsuarioCliente(String nome, String cpf, String email, String senha,
-            String telefone, String celular, String dataNascimento, String sexo) {
+             String celular, String dataNascimento, String sexo) {
         super(email, senha);
         this.nome = nome;
         this.cpf = cpf;
-        this.telefone = telefone;
         this.celular = celular;
         this.dataNascimento = dataNascimento;
         this.sexo = sexo;
@@ -36,14 +34,6 @@ public class UsuarioCliente extends Usuario {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
     }
 
     public String getCelular() {
@@ -76,7 +66,6 @@ public class UsuarioCliente extends Usuario {
         System.out.println("CPF: " + getCpf());
         System.out.println("Email: " + getEmail());
         System.out.println("Senha: " + getSenha());
-        System.out.println("Telefone: " + getTelefone());
         System.out.println("Celular: " + getCelular());
         System.out.println("Data de Nascimento: " + getDataNascimento());
         System.out.println("Sexo: " + getSexo());

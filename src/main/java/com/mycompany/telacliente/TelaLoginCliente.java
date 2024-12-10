@@ -1,15 +1,14 @@
 package com.mycompany.telacliente;
 
-import com.mycompany.teladono.*;
 import javax.swing.JOptionPane;
 
 public class TelaLoginCliente extends javax.swing.JFrame {
 
-    private UsuarioDono usuarioDono;
+    private UsuarioCliente clienteLogado;
 
     public TelaLoginCliente() {
         initComponents();
-        this.usuarioDono = new UsuarioDono("sergio", "123", "Sergio", "001", "111.222.333-44");
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -135,21 +134,21 @@ public class TelaLoginCliente extends javax.swing.JFrame {
         return false;
     }
 
-    public boolean checkLogin(String login, String senha) {
-        return usuarioDono.getEmail().equals(login) && usuarioDono.getSenha().equals(senha);
-    }
 
     private void txtEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEntrarActionPerformed
         String email = LoginEmail.getText().trim();
         String senha = new String(LoginSenha.getPassword()).trim();
 
-        if (validarLogin(email, senha)) {
-            JOptionPane.showMessageDialog(null, "Bem-vindo! " + getName());
-            new EscolhaRestaurante().setVisible(true);
-            this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(null, "Email ou senha inválidos!", "Erro", JOptionPane.ERROR_MESSAGE);
+        for (UsuarioCliente cliente : TelaCadastroCliente.getListaClientes()) {
+            if (cliente.getEmail().equals(email) && cliente.getSenha().equals(senha)) {
+                clienteLogado = cliente;
+                JOptionPane.showMessageDialog(this, "Bem-vindo, " + clienteLogado.getNome() + "!");
+                new EscolhaUsuario().setVisible(true);
+                this.dispose();
+                return;
+            }
         }
+        JOptionPane.showMessageDialog(this, "Email ou senha inválidos!", "Erro", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_txtEntrarActionPerformed
 
     public static void main(String args[]) {

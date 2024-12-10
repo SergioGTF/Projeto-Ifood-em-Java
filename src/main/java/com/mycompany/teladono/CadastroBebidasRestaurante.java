@@ -259,6 +259,7 @@ public class CadastroBebidasRestaurante extends javax.swing.JFrame {
 
         Bebida novaBebida = new Bebida(nome, descricao, preco, tamanhoMl, isAlcoolica, recipiente);
         listaBebidas.add(novaBebida);
+        RepoBebidas.adicionarBebida(novaBebida);
 
         DefaultTableModel dtmBebida = (DefaultTableModel) BebidasCadastradas.getModel();
         Object[] dados = {nome, String.format("%.2f", preco), descricao, tamanhoMl + " ml", isAlcoolica ? "Sim" : "Não", recipiente};

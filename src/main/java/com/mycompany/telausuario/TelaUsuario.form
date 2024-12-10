@@ -70,9 +70,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
-                      <Component id="LoginUsuário" min="-2" pref="117" max="-2" attributes="0"/>
+                      <Component id="LoginUsuarioCliente" min="-2" pref="117" max="-2" attributes="0"/>
                       <EmptySpace pref="110" max="32767" attributes="0"/>
-                      <Component id="LoginDono" min="-2" pref="117" max="-2" attributes="0"/>
+                      <Component id="LoginUsuarioDono" min="-2" pref="117" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -96,8 +96,8 @@
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="LoginUsuário" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                          <Component id="LoginDono" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="LoginUsuarioCliente" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="LoginUsuarioDono" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="170" max="32767" attributes="0"/>
                   </Group>
@@ -121,7 +121,7 @@
                 <Property name="text" type="java.lang.String" value="Escolha uma op&#xe7;&#xe3;o"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="LoginDono">
+            <Component class="javax.swing.JButton" name="LoginUsuarioDono">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
@@ -129,10 +129,10 @@
                 <Property name="text" type="java.lang.String" value="Dono"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LoginDonoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LoginUsuarioDonoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="LoginUsu&#xe1;rio">
+            <Component class="javax.swing.JButton" name="LoginUsuarioCliente">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
@@ -143,7 +143,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LoginUsu&#xe1;rioActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LoginUsuarioClienteActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

@@ -271,6 +271,7 @@ public class CadastroComidaRestaurante extends javax.swing.JFrame {
 
         Comida novaComida = new Comida(nome, descricao, preco, tipoCozinha, isVegano, isVegetariano, tempoPreparo);
         listaComidas.add(novaComida);
+        RepoComidas.adicionarComida(novaComida);
 
         DefaultTableModel dtmComida = (DefaultTableModel) ComidasCadastradas.getModel();
         Object[] dados = {nome, String.valueOf(preco), descricao, String.valueOf(tempoPreparo), tipoCozinha, isVegano ? "Sim" : "Não", isVegetariano ? "Sim" : "Não"};

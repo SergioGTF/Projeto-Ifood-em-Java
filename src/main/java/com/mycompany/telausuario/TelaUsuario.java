@@ -1,12 +1,12 @@
 package com.mycompany.telausuario;
 
-import com.mycompany.teladono.TelaLoginDono;
+import com.mycompany.teladono.TelaCadastroDono;
 import com.mycompany.telacliente.TelaCadastroCliente;
 
 
-public class InterfaceTelaUsuario extends javax.swing.JFrame {
+public class TelaUsuario extends javax.swing.JFrame {
     
-    public InterfaceTelaUsuario() {
+    public TelaUsuario() {
         initComponents();
     }
 
@@ -18,8 +18,8 @@ public class InterfaceTelaUsuario extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        LoginDono = new javax.swing.JButton();
-        LoginUsuário = new javax.swing.JButton();
+        LoginUsuarioDono = new javax.swing.JButton();
+        LoginUsuarioCliente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 0, 255));
@@ -34,20 +34,20 @@ public class InterfaceTelaUsuario extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel2.setText("Escolha uma opção");
 
-        LoginDono.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        LoginDono.setText("Dono");
-        LoginDono.addActionListener(new java.awt.event.ActionListener() {
+        LoginUsuarioDono.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        LoginUsuarioDono.setText("Dono");
+        LoginUsuarioDono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginDonoActionPerformed(evt);
+                LoginUsuarioDonoActionPerformed(evt);
             }
         });
 
-        LoginUsuário.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        LoginUsuário.setText("Usuário");
-        LoginUsuário.setMaximumSize(new java.awt.Dimension(80, 30));
-        LoginUsuário.addActionListener(new java.awt.event.ActionListener() {
+        LoginUsuarioCliente.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        LoginUsuarioCliente.setText("Usuário");
+        LoginUsuarioCliente.setMaximumSize(new java.awt.Dimension(80, 30));
+        LoginUsuarioCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginUsuárioActionPerformed(evt);
+                LoginUsuarioClienteActionPerformed(evt);
             }
         });
 
@@ -57,9 +57,9 @@ public class InterfaceTelaUsuario extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(116, 116, 116)
-                .addComponent(LoginUsuário, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LoginUsuarioCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
-                .addComponent(LoginDono, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LoginUsuarioDono, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(118, 118, 118))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -79,8 +79,8 @@ public class InterfaceTelaUsuario extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LoginUsuário, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LoginDono, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LoginUsuarioCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LoginUsuarioDono, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(170, Short.MAX_VALUE))
         );
 
@@ -112,20 +112,20 @@ public class InterfaceTelaUsuario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void LoginDonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginDonoActionPerformed
-        new TelaLoginDono().setVisible(true);
-    }//GEN-LAST:event_LoginDonoActionPerformed
+    private void LoginUsuarioDonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginUsuarioDonoActionPerformed
+        new TelaCadastroDono().setVisible(true);
+    }//GEN-LAST:event_LoginUsuarioDonoActionPerformed
 
-    private void LoginUsuárioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginUsuárioActionPerformed
+    private void LoginUsuarioClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginUsuarioClienteActionPerformed
         new TelaCadastroCliente().setVisible(true);
-    }//GEN-LAST:event_LoginUsuárioActionPerformed
+    }//GEN-LAST:event_LoginUsuarioClienteActionPerformed
 
     public static void main(String args[]) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton LoginDono;
-    private javax.swing.JButton LoginUsuário;
+    private javax.swing.JButton LoginUsuarioCliente;
+    private javax.swing.JButton LoginUsuarioDono;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

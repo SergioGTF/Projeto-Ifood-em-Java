@@ -1,14 +1,21 @@
 package com.mycompany.teladono;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import java.util.List;
 
 public class TelaLoginDono extends javax.swing.JFrame {
-    
-    private UsuarioDono usuarioDono;
+
+    private List<UsuarioDono> listaDonos;
 
     public TelaLoginDono() {
         initComponents();
-        this.usuarioDono = new UsuarioDono("sergio", "123", "Sergio", "001", "111.222.333-44");
+        this.listaDonos = new ArrayList<>();  
+    }
+
+    public TelaLoginDono(List<UsuarioDono> listaDonos) {
+        initComponents();
+        this.listaDonos = listaDonos;  
     }
 
     @SuppressWarnings("unchecked")
@@ -19,7 +26,7 @@ public class TelaLoginDono extends javax.swing.JFrame {
         jColorChooser2 = new javax.swing.JColorChooser();
         JPanelLogin = new javax.swing.JPanel();
         txtSenha = new javax.swing.JLabel();
-        txtEntrar = new javax.swing.JButton();
+        BotaoEntrar = new javax.swing.JButton();
         txtNome = new javax.swing.JLabel();
         txtEmail = new javax.swing.JLabel();
         LoginID = new javax.swing.JTextField();
@@ -40,11 +47,11 @@ public class TelaLoginDono extends javax.swing.JFrame {
         txtSenha.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         txtSenha.setText("Senha");
 
-        txtEntrar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        txtEntrar.setText("Entrar");
-        txtEntrar.addActionListener(new java.awt.event.ActionListener() {
+        BotaoEntrar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BotaoEntrar.setText("Entrar");
+        BotaoEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEntrarActionPerformed(evt);
+                BotaoEntrarActionPerformed(evt);
             }
         });
 
@@ -72,7 +79,7 @@ public class TelaLoginDono extends javax.swing.JFrame {
             JPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPanelLoginLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtEntrar)
+                .addComponent(BotaoEntrar)
                 .addContainerGap())
             .addGroup(JPanelLoginLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
@@ -112,7 +119,7 @@ public class TelaLoginDono extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addComponent(txtID1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(JPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(JPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LoginID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LoginSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -120,7 +127,7 @@ public class TelaLoginDono extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LoginEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                .addComponent(txtEntrar)
+                .addComponent(BotaoEntrar)
                 .addContainerGap())
         );
 
@@ -138,30 +145,51 @@ public class TelaLoginDono extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    
+
     public boolean checkLogin(String login, String senha) {
-        return usuarioDono.getEmail().equals(login) && usuarioDono.getSenha().equals(senha);
+        if (listaDonos == null || listaDonos.isEmpty()) {  
+            return false;
+        }
+
+        UsuarioDono dono = listaDonos.stream()
+                .filter(d -> d.getEmail().equals(login))
+                .findFirst()
+                .orElse(null);
+
+        if (dono == null) {
+            return false;
+        }
+        return dono.getSenha().equals(senha);
     }
-    
-    private void txtEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEntrarActionPerformed
+
+    private void BotaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEntrarActionPerformed
         String email = LoginEmail.getText().trim();
-        String senha = new String(LoginSenha.getPassword()).trim(); 
+        String senha = new String(LoginSenha.getPassword()).trim();
 
         if (this.checkLogin(email, senha)) {
-            JOptionPane.showMessageDialog(null, "Bem-vindo, " + usuarioDono.getNome());
-            new CadastroRestaurante().setVisible(true); 
-            usuarioDono.exibirdetalhesUsuario();
-            this.dispose(); 
+            UsuarioDono dono = listaDonos.stream()
+                    .filter(d -> d.getEmail().equals(email))
+                    .findFirst()
+                    .orElse(null);
+
+            if (dono != null) {
+                JOptionPane.showMessageDialog(null, "Bem-vindo, " + dono.getNome());
+                System.out.println("Informações do Dono:");
+                dono.exibirdetalhesUsuario();
+                new CadastroRestaurante().setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Dono não encontrado", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Dados inválidos", "Erro", JOptionPane.ERROR_MESSAGE);
         }
-        
- 
-    }//GEN-LAST:event_txtEntrarActionPerformed
+    }//GEN-LAST:event_BotaoEntrarActionPerformed
 
     public static void main(String args[]) {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotaoEntrar;
     private javax.swing.JPanel JPanelLogin;
     private javax.swing.JFormattedTextField LoginCPF;
     private javax.swing.JTextField LoginEmail;
@@ -172,7 +200,6 @@ public class TelaLoginDono extends javax.swing.JFrame {
     private javax.swing.JColorChooser jColorChooser2;
     private javax.swing.JLabel txtCPF;
     private javax.swing.JLabel txtEmail;
-    private javax.swing.JButton txtEntrar;
     private javax.swing.JLabel txtID1;
     private javax.swing.JLabel txtNome;
     private javax.swing.JLabel txtSenha;

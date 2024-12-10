@@ -8,7 +8,6 @@ import java.util.ArrayList;
 public class CadastroRestaurante extends javax.swing.JFrame {
 
     private ArrayList<ListaRestaurantes> listaRestaurantes = new ArrayList<>();
-    private boolean restauranteCadastrado = false;
 
     public CadastroRestaurante() {
         initComponents();
@@ -252,7 +251,8 @@ public class CadastroRestaurante extends javax.swing.JFrame {
         }
 
         ListaRestaurantes novoRestaurante = new ListaRestaurantes(nome, endereco);
-        listaRestaurantes.add(novoRestaurante);
+        listaRestaurantes.add(novoRestaurante); 
+        RepoRestaurantes.adicionarRestaurante(novoRestaurante); 
 
         DefaultTableModel dtmProdutos = (DefaultTableModel) RestaurantesCadastrados.getModel();
         Object[] dados = {nome, endereco};
@@ -261,18 +261,15 @@ public class CadastroRestaurante extends javax.swing.JFrame {
         NomeRestaurante.setText("");
         EndRestaurante.setText("");
         JOptionPane.showMessageDialog(this, "Restaurante cadastrado com sucesso!");
-
-        imprimirListaRestaurantes();
-
-        restauranteCadastrado = true;
     }//GEN-LAST:event_BotaoCadastrarActionPerformed
 
     private void BotaoProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProximoActionPerformed
-        if (restauranteCadastrado) {
-            CadastroComidaRestaurante cadastro = new CadastroComidaRestaurante();
-            cadastro.setVisible(true);
+        int selectedRow = RestaurantesCadastrados.getSelectedRow();
+        if (selectedRow != -1) {
+            CadastroComidaRestaurante cadastroComida = new CadastroComidaRestaurante();
+            cadastroComida.setVisible(true);
         } else {
-            JOptionPane.showMessageDialog(this, "Cadastre um restaurante antes de prosseguir.");
+            JOptionPane.showMessageDialog(this, "Selecione um restaurante para cadastrar produtos.");
         }
     }//GEN-LAST:event_BotaoProximoActionPerformed
 
